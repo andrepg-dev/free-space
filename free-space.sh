@@ -88,3 +88,8 @@ fi
 echo "Headless browsers"
 clean_path "puppeteer browsers" "$HOME/.cache/puppeteer"
 clean_path "playwright browsers" "$HOME/Library/Caches/ms-playwright"
+
+echo "Editors"
+clean_path "VS Code cache" "$HOME/Library/Application Support/Code/Cache" \
+  "$HOME/Library/Application Support/Code/CachedData" \
+  "$HOME/Library/Application Support/Code/CachedExtensionVSIXs"
