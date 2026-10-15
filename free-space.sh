@@ -93,3 +93,15 @@ echo "Editors"
 clean_path "VS Code cache" "$HOME/Library/Application Support/Code/Cache" \
   "$HOME/Library/Application Support/Code/CachedData" \
   "$HOME/Library/Application Support/Code/CachedExtensionVSIXs"
+
+echo "App caches and logs"
+# Everything else in ~/Library/Caches; skip dirs handled above.
+app_caches=()
+for d in "$HOME"/Library/Caches/*; do
+  case "$(basename "$d")" in
+    pnpm|pip|Yarn|Homebrew|NetBeans|ms-playwright) continue ;;
+  esac
+  app_caches+=("$d")
+done
+[ ${#app_caches[@]} -gt 0 ] && clean_path "~/Library/Caches (apps)" "${app_caches[@]}"
+clean_path "user logs" "$HOME/Library/Logs"
