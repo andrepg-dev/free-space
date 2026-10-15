@@ -62,7 +62,7 @@ BEFORE=$(free_space)
 
 echo "JavaScript"
 clean_path "npm cache" "$HOME/.npm/_cacache" "$HOME/.npm/_npx" "$HOME/.npm/_logs"
-clean_cmd  "pnpm store (unreferenced)" "$HOME/Library/pnpm/store" pnpm store prune
+clean_cmd  "pnpm store (at most; prunes unreferenced)" "$HOME/Library/pnpm/store" pnpm store prune
 clean_path "pnpm metadata cache" "$HOME/Library/Caches/pnpm"
 clean_path "bun cache" "$HOME/.bun/install/cache"
 clean_path "yarn cache" "$HOME/Library/Caches/Yarn"
