@@ -84,3 +84,7 @@ clean_path "simulator caches" "$HOME/Library/Developer/CoreSimulator/Caches"
 if [ $APPLY -eq 1 ] && command -v xcrun >/dev/null 2>&1; then
   xcrun simctl delete unavailable >/dev/null 2>&1
 fi
+
+echo "Headless browsers"
+clean_path "puppeteer browsers" "$HOME/.cache/puppeteer"
+clean_path "playwright browsers" "$HOME/Library/Caches/ms-playwright"
