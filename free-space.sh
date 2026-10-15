@@ -105,3 +105,12 @@ for d in "$HOME"/Library/Caches/*; do
 done
 [ ${#app_caches[@]} -gt 0 ] && clean_path "~/Library/Caches (apps)" "${app_caches[@]}"
 clean_path "user logs" "$HOME/Library/Logs"
+
+echo
+printf "Total: %s\n" "$(human "$TOTAL_KB")"
+if [ $APPLY -eq 1 ]; then
+  AFTER=$(free_space)
+  printf "Free space: %s -> %s\n" "$(human "$BEFORE")" "$(human "$AFTER")"
+else
+  echo "Nothing deleted. Run with --yes to clean."
+fi
