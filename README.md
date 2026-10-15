@@ -38,7 +38,7 @@ MIT
 ## Claude Code skill
 
 `skills/free-space/SKILL.md` teaches Claude Code to run this script and then
-hunt for more space (Docker, old `node_modules`, Downloads, snapshots, models),
+hunt for more space (Docker, old `node_modules`, snapshots, models),
 asking before deleting anything you created. Install it globally:
 
 ```sh
