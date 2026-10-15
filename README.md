@@ -34,3 +34,15 @@ Downloads, Documents, Desktop, Docker images/volumes, Hugging Face models,
 ## License
 
 MIT
+
+## Claude Code skill
+
+`skills/free-space/SKILL.md` teaches Claude Code to run this script and then
+hunt for more space (Docker, old `node_modules`, Downloads, snapshots, models),
+asking before deleting anything you created. Install it globally:
+
+```sh
+ln -s "$PWD/skills/free-space" ~/.claude/skills/free-space
+```
+
+Then say "limpia el espacio" or "free up disk space".
