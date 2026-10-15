@@ -70,3 +70,7 @@ clean_path "yarn cache" "$HOME/Library/Caches/Yarn"
 echo "Python"
 clean_cmd  "uv cache" "$HOME/.cache/uv" uv cache clean
 clean_path "pip cache" "$HOME/Library/Caches/pip"
+
+echo "JVM"
+clean_path "gradle caches" "$HOME/.gradle/caches"
+clean_path "NetBeans cache" "$HOME/Library/Caches/NetBeans"
