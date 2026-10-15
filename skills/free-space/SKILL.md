@@ -41,13 +41,13 @@ Known places worth checking:
 
 | Where | How | Ask first? |
 | --- | --- | --- |
-| Docker | `docker system df`, then `docker system prune -a` / `docker builder prune` | Yes (images/volumes) |
+| Docker | `docker system df`, `docker container prune -f`, `docker image prune -af`, `docker builder prune -af` | No. Never volumes |
 | Old `node_modules`, `.next`, `target`, `build`, `.venv` in projects | `find ~/src -name node_modules -type d -prune -mtime +30` | Yes, list them |
 | Trash | `~/.Trash` | Yes |
 | Time Machine local snapshots | `tmutil listlocalsnapshots /`, `tmutil thinlocalsnapshots / 999999999999 4` | No (system rebuilds) |
-| Xcode | `~/Library/Developer/Xcode/{Archives,iOS DeviceSupport}`, `xcrun simctl delete unavailable` | Archives: yes |
+| Xcode | `~/Library/Developer/Xcode/{Archives,iOS DeviceSupport}`, `xcrun simctl delete all` | Simulators: no. Archives: yes |
 | iOS backups | `~/Library/Application Support/MobileSync/Backup` | Yes |
-| ML models | `~/.cache/huggingface`, `~/.ollama/models`, LM Studio | Yes |
+| ML models | `~/.cache/huggingface/{hub,xet}` (keep `token`), `~/.ollama/models`, LM Studio | Hugging Face: no. Others: yes |
 | Other tool caches | `~/.cache/*`, `~/.cargo/registry`, `~/go/pkg/mod`, `~/.m2/repository`, `~/.conda/pkgs`, CocoaPods, Flutter/pub, Android SDK system images | Usually no, they are caches |
 | Electron app caches | `~/Library/Application Support/*/Cache`, `*/Code Cache`, `*/GPUCache` | No |
 | Mail / Messages attachments | `~/Library/Mail`, `~/Library/Messages/Attachments` | Yes |
