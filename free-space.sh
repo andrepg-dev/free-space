@@ -66,3 +66,7 @@ clean_cmd  "pnpm store (unreferenced)" "$HOME/Library/pnpm/store" pnpm store pru
 clean_path "pnpm metadata cache" "$HOME/Library/Caches/pnpm"
 clean_path "bun cache" "$HOME/.bun/install/cache"
 clean_path "yarn cache" "$HOME/Library/Caches/Yarn"
+
+echo "Python"
+clean_cmd  "uv cache" "$HOME/.cache/uv" uv cache clean
+clean_path "pip cache" "$HOME/Library/Caches/pip"
