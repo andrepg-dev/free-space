@@ -59,3 +59,10 @@ clean_cmd() {
 
 BEFORE=$(free_space)
 [ $APPLY -eq 1 ] && echo "Cleaning caches..." || echo "Dry run — pass --yes to delete:"
+
+echo "JavaScript"
+clean_path "npm cache" "$HOME/.npm/_cacache" "$HOME/.npm/_npx" "$HOME/.npm/_logs"
+clean_cmd  "pnpm store (unreferenced)" "$HOME/Library/pnpm/store" pnpm store prune
+clean_path "pnpm metadata cache" "$HOME/Library/Caches/pnpm"
+clean_path "bun cache" "$HOME/.bun/install/cache"
+clean_path "yarn cache" "$HOME/Library/Caches/Yarn"
