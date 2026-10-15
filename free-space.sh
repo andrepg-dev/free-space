@@ -74,3 +74,6 @@ clean_path "pip cache" "$HOME/Library/Caches/pip"
 echo "JVM"
 clean_path "gradle caches" "$HOME/.gradle/caches"
 clean_path "NetBeans cache" "$HOME/Library/Caches/NetBeans"
+
+echo "Homebrew"
+clean_cmd  "brew downloads and old versions" "$HOME/Library/Caches/Homebrew" brew cleanup --prune=all -s
