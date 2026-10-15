@@ -77,3 +77,10 @@ clean_path "NetBeans cache" "$HOME/Library/Caches/NetBeans"
 
 echo "Homebrew"
 clean_cmd  "brew downloads and old versions" "$HOME/Library/Caches/Homebrew" brew cleanup --prune=all -s
+
+echo "Xcode"
+clean_path "DerivedData" "$HOME/Library/Developer/Xcode/DerivedData"
+clean_path "simulator caches" "$HOME/Library/Developer/CoreSimulator/Caches"
+if [ $APPLY -eq 1 ] && command -v xcrun >/dev/null 2>&1; then
+  xcrun simctl delete unavailable >/dev/null 2>&1
+fi
